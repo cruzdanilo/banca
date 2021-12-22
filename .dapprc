@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+export SOLC_VERSION=0.8.11
+export DAPP_SRC=contracts
+export DAPP_REMAPPINGS=$(< remappings.txt)

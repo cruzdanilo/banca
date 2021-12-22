@@ -11,6 +11,7 @@ out
 test
 utils
 .*
+hevm.libs.*
 package.json
 yarn.lock
 build.json

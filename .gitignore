@@ -9,6 +9,7 @@ hevm.libs.*/
 /out/
 .DS_Store
 .env
+.*-version
 Thumbs.db
 package-lock.json
 *.log

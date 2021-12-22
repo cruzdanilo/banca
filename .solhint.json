@@ -1,0 +1,10 @@
+{
+  "extends": "solhint:all",
+  "plugins": ["prettier"],
+  "rules": {
+    "compiler-version": ["error", "0.8.11"],
+    "quotes": ["error", "single"],
+    "prettier/prettier": "error",
+    "private-vars-leading-underscore": "off"
+  }
+}

@@ -5,9 +5,33 @@ jobs:
     steps:
       - run: corepack enable
       - uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - uses: actions/cache@v2
+        with:
+          key: cargo
+          path: ~/.cargo/
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+      - uses: actions-rs/cargo@v1
+        with:
+          command: install
+          args: --git https://github.com/gakonst/foundry --bin forge --locked
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: source .dapprc && solc-select install $SOLC_VERSION && solc-select use $SOLC_VERSION
+
       - uses: actions/setup-node@v2
         with:
           node-version: 16
           cache: yarn
       - run: yarn
-      - run: yarn build
+
+      - run: yarn validate
