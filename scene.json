@@ -1,0 +1,36 @@
+{
+  "display": {
+    "title": "interactive-text",
+    "favicon": "favicon_asset"
+  },
+  "contact": {
+    "name": "danilo neves cruz",
+    "email": "cruzdanilo@gmail.com"
+  },
+  "owner": "",
+  "scene": {
+    "parcels": ["0,0"],
+    "base": "0,0"
+  },
+  "communications": {
+    "type": "webrtc",
+    "signalling": "https://signalling-01.decentraland.org"
+  },
+  "policy": {
+    "contentRating": "E",
+    "fly": true,
+    "voiceEnabled": true,
+    "blacklist": []
+  },
+  "main": "dist/main.js",
+  "tags": [],
+  "requiredPermissions": [],
+  "spawnPoints": [
+    {
+      "name": "spawn1",
+      "default": true,
+      "position": { "x": 0, "y": 0, "z": 0 },
+      "cameraTarget": { "x": 8, "y": 1, "z": 8 }
+    }
+  ]
+}

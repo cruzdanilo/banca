@@ -1,0 +1,61 @@
+{
+  "name": "banca",
+  "version": "0.0.1",
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/cruzdanilo/banca",
+  "author": "danilo neves cruz <cruzdanilo@gmail.com>",
+  "scripts": {
+    "start": "run-p 'start:*'",
+    "start:dcl": "rimraf dist/main.js && wait-on dist/main.js && dcl start",
+    "start:build": "cross-env TS_NODE_PROJECT=tsconfig.tools.json webpack --mode development --env scene --watch",
+    "build": "run-p --aggregate-output --continue-on-error 'build:*'",
+    "build:ecs": "cross-env TS_NODE_PROJECT=tsconfig.tools.json webpack --mode production",
+    "lint": "run-p --aggregate-output --continue-on-error 'lint:*'",
+    "lint:es": "eslint --ext .ts,.js --ignore-path .gitignore .",
+    "prepack": "rimraf dist && cross-env TS_NODE_PROJECT=tsconfig.tools.json webpack --mode production --env lib"
+  },
+  "main": "dist/Banca.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "engines": {
+    "node": ">=16.9"
+  },
+  "packageManager": "yarn@3.1.1",
+  "dependencies": {
+    "decentraland-builder-scripts": "^0.24.0"
+  },
+  "peerDependencies": {
+    "decentraland-ecs": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/loader-utils": "^2.0.3",
+    "@types/node": "^17.0.2",
+    "@types/webpack": "^5.28.0",
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "cross-env": "^7.0.3",
+    "decentraland": "^3.8.3",
+    "decentraland-ecs": "^6.7.0",
+    "dotenv": "^10.0.0",
+    "eslint": "^8.5.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-import-resolver-webpack": "^0.13.2",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-webpack-plugin": "^3.1.1",
+    "file-type": "^17.0.2",
+    "imports-loader": "^3.1.1",
+    "loader-utils": "^3.2.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4",
+    "wait-on": "^6.0.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}

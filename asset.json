@@ -1,0 +1,47 @@
+{
+  "id": "1dd51d19-a20b-4915-a89d-7d808388eeb3",
+  "name": "banca",
+  "tags": ["defi"],
+  "category": "decorations",
+  "parameters": [
+    {
+      "id": "hoverText",
+      "label": "hover text",
+      "type": "text",
+      "default": "banca"
+    },
+    {
+      "id": "distance",
+      "label": "hover text",
+      "type": "number",
+      "default": 6
+    },
+    {
+      "id": "onOpen",
+      "label": "when opened",
+      "type": "actions"
+    },
+    {
+      "id": "onClose",
+      "label": "when closed",
+      "type": "actions"
+    }
+  ],
+  "actions": [
+    {
+      "id": "open",
+      "label": "open",
+      "parameters": []
+    },
+    {
+      "id": "close",
+      "label": "close",
+      "parameters": []
+    },
+    {
+      "id": "toggle",
+      "label": "open or close",
+      "parameters": []
+    }
+  ]
+}
